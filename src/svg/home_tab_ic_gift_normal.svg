@@ -1,0 +1,23 @@
+<svg id="home_tab_ic_gift_normal" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #919293;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #919293;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="ic">
+    <path id="椭圆_1" data-name="椭圆 1" class="cls-1" d="M225,2321a21,21,0,1,1-21,21A21,21,0,0,1,225,2321Zm0,3a18,18,0,1,1-18,18A18,18,0,0,1,225,2324Z" transform="translate(-203 -2320)"/>
+    <path id="ic-2" data-name="ic" class="cls-2" d="M234.93,2343.71L225,2353l-9.935-9.29a6.252,6.252,0,0,1,0-9.28c2.779-2.6,7.217-1.34,9.935,1.2,2.717-2.54,7.155-3.8,9.935-1.2A6.253,6.253,0,0,1,234.93,2343.71Z" transform="translate(-203 -2320)"/>
+  </g>
+</svg>

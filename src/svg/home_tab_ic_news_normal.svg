@@ -1,0 +1,13 @@
+<svg id="home_tab_ic_news_normal" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #919293;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="ic">
+    <path id="椭圆_2" data-name="椭圆 2" class="cls-1" d="M544,2357H507v-3h0l4-4v-11h0.025A14.49,14.49,0,0,1,524,2325.08V2322h3v3.08A14.49,14.49,0,0,1,539.975,2339H540v11l4,4h0v3Zm-7-6v-12h-0.025a11.485,11.485,0,0,0-22.95,0H514v12l-3,3h29Zm-5,12H519v-3h13v3Z" transform="translate(-503.5 -2320.5)"/>
+  </g>
+</svg>

@@ -1,0 +1,201 @@
+<template>
+  <div class="slider"
+    v-finger:singleTap="handleTapClose">
+    <div class="item-wrapper"
+      v-transform
+      v-finger:pressMove="handlePressMove"
+      v-finger:touchStart="handleTouchStart"
+      v-finger:touchEnd="handleTouchEnd"
+      v-finger:swipe="handleSwipe">
+      <!-- 不能以index为:key，index不变组件不更新 -->
+      <VuerSingle class="item"
+        v-for="(src,index) in imgList"
+        :key="src + index"
+        ref="img"
+        :src="src"
+        :class="{z1:currentIndex===index}"
+        @disableSwipe="allowSwipe = false"
+        @enableSwipe="allowSwipe = true" />
+    </div>
+    <icon class="icon-cancel" @click.native="handleClose" type="cancel">
+    </icon>
+  </div>
+</template>
+
+<script>
+import VuerSingle from './VuerSingle'
+import To from './to.js'
+import { Icon } from 'vux'
+export default {
+  components: { VuerSingle, Icon },
+  data () {
+    return {
+      imgList: [],
+      isSingle: false,
+      isShow: false,
+      allowSwipe: false,
+      currentIndex: 0,
+      /* 从允许swipe开始纪录swipe位移
+       * handleTouchEnd时位移小于100（意味着无法触发swipe），清零
+       * 大于100必定触发handleSwipe，
+       * 修改currentIndex后清零
+       */
+      swipeDelta: 0,
+      swipeThreshold: 100
+    }
+  },
+  beforeRouteLeave (to, from, next) {
+    // 路由跳转时关闭图片预览
+    // vm.isShow = false
+    next()
+  },
+  computed: {
+    maxIndex () {
+      return this.imgList.length - 1
+    }
+  },
+  watch: {
+    isShow (val) {
+      if (val) {
+        // 使用 history 处理安卓物理返回键关闭图片
+        if (/android/i.test(navigator.userAgent)) {
+          history.pushState(null, null, location.href)
+          window.addEventListener('popstate', this.closeGallery)
+        }
+        document.querySelector('.slider').className = 'slider open'
+      } else {
+        window.removeEventListener('popstate', this.closeGallery)
+        document.querySelector('.slider').className = 'slider close'
+      }
+    },
+    currentIndex () {
+      // 图片未加载成功时无宽度 ，加载完成后先显示第一张后跳到当前
+      let el = document.querySelector('.item-wrapper')
+      el.translateX = -this.currentIndex * el.getBoundingClientRect().width
+    },
+    imgList () {
+      let el = document.querySelector('.item-wrapper')
+      el.translateX = -this.currentIndex * el.getBoundingClientRect().width
+    }
+  },
+  methods: {
+    handleTapClose () {
+    },
+    handleClose () {
+      if (/android/i.test(navigator.userAgent)) {
+        history.back()
+      }
+      this.closeGallery()
+    },
+    closeGallery () {
+      this.isShow = false
+      this.$refs.img[this.currentIndex].reset()
+    },
+    handlePressMove (e, el) {
+      e.preventDefault()
+      if (this.allowSwipe === false || this.isSingle) return
+      el.translateX += e.deltaX
+      this.swipeDelta += e.deltaX
+    },
+    handleTouchStart () {
+      To.stopAll()
+    },
+    handleTouchEnd (e, el) {
+      // touchmove太短无法触发swipe时用于复位
+      if (Math.abs(this.swipeDelta) < this.swipeThreshold) this.swipeDelta = 0
+      let width = el.getBoundingClientRect().width
+      /* eslint-disable no-new */
+      new To(el, 'translateX', -this.currentIndex * width, 200, this.ease)
+    },
+    handleSwipe (evt, el) {
+      // swipeDelta小于swipeThreshold不触发翻页
+      if (Math.abs(this.swipeDelta) < this.swipeThreshold) {
+        this.swipeDelta = 0
+        return
+      }
+      let width = el.getBoundingClientRect().width
+      if (evt.direction === 'Left' && this.currentIndex < this.maxIndex) {
+        this.$refs.img[this.currentIndex].reset()
+        this.currentIndex += 1
+      } else if (evt.direction === 'Right' && this.currentIndex > 0) {
+        this.$refs.img[this.currentIndex].reset()
+        this.currentIndex -= 1
+      }
+      new To(el, 'translateX', -this.currentIndex * width, 200, this.ease)
+      this.swipeDelta = 0
+    }
+  }
+}
+</script>
+
+<style scoped>
+.slider {
+  position: fixed;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  z-index: 1000;
+  opacity: 0;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.item-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  /* 隐形坑，wrapper 宽度为100%，为什么拨走后还能响应事件？ */
+}
+
+.item {
+  height: 100%;
+  flex-basis: 100%;
+  flex-shrink: 0;
+}
+
+/* 左划后右划触发swipe无法解决，只能把当前图片置顶 */
+.z1 {
+  z-index: 1;
+}
+
+.open {
+  animation: open 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+}
+
+.close {
+  animation: close 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes close {
+  0% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+.icon-cancel {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 30px;
+}
+</style>

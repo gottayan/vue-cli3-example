@@ -1,0 +1,28 @@
+<svg id="home_tab_ic_gift_selected" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #e2462c;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        opacity: 0.3;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #e2462c;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="ic">
+    <path id="椭圆_1" data-name="椭圆 1" class="cls-1" d="M225,2422a21,21,0,1,1-21,21A21,21,0,0,1,225,2422Zm0,3a18,18,0,1,1-18,18A18,18,0,0,1,225,2425Z" transform="translate(-203 -2421)"/>
+    <path id="椭圆_1_拷贝" data-name="椭圆 1 拷贝" class="cls-2" d="M245,2438c-0.009,5.05-4.234,19.35-6,20-1.631.6-12.2,7.08-22.448,3.19A20.975,20.975,0,0,1,232,2426a21.168,21.168,0,0,1,3.76.35C238.869,2428.84,245.007,2434.23,245,2438Z" transform="translate(-203 -2421)"/>
+    <path id="ic-2" data-name="ic" class="cls-3" d="M234.93,2444.71L225,2454l-9.935-9.29a6.252,6.252,0,0,1,0-9.28c2.779-2.6,7.217-1.34,9.935,1.2,2.717-2.54,7.155-3.8,9.935-1.2A6.253,6.253,0,0,1,234.93,2444.71Z" transform="translate(-203 -2421)"/>
+  </g>
+</svg>

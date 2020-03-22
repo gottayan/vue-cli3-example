@@ -1,0 +1,18 @@
+<svg id="home_tab_ic_news_selected" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #e2462c;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        opacity: 0.4;
+      }
+    </style>
+  </defs>
+  <g id="ic">
+    <path id="椭圆_2" data-name="椭圆 2" class="cls-1" d="M544,2458H507v-3h0l4-4v-11h0.025A14.49,14.49,0,0,1,524,2426.08V2423h3v3.08A14.49,14.49,0,0,1,539.975,2440H540v11l4,4h0v3Zm-7-6v-12h-0.025a11.485,11.485,0,0,0-22.95,0H514v12l-3,3h29Zm-5,12H519v-3h13v3Z" transform="translate(-503.5 -2421.5)"/>
+    <path id="椭圆_2_拷贝" data-name="椭圆 2 拷贝" class="cls-2" d="M533.193,2430.08c2.65,2.04,5.963,5.49,5.807,9.92v11l4,5H517l1-1v-11h0.025A14.49,14.49,0,0,1,531,2430.08h2.193Z" transform="translate(-503.5 -2421.5)"/>
+  </g>
+</svg>

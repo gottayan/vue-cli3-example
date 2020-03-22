@@ -1,0 +1,18 @@
+<svg id="home_tab_ic_home_selected" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #e2462c;
+        fill-rule: evenodd;
+      }
+
+      .cls-1 {
+        opacity: 0.3;
+      }
+    </style>
+  </defs>
+  <g id="ic">
+    <path id="home_拷贝" data-name="home 拷贝" class="cls-1" d="M94,2440v22H62v-19.55l17.96-14.74Z" transform="translate(-53 -2421)"/>
+    <path id="home" class="cls-2" d="M75,2423s19.872,15.87,20,16v24H55v-24Zm0,4-17,13v20H92v-20Zm0,22a5,5,0,0,0-5,5H67a8,8,0,0,1,16,0H80A5,5,0,0,0,75,2449Z" transform="translate(-53 -2421)"/>
+  </g>
+</svg>

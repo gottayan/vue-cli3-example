@@ -1,0 +1,73 @@
+// 全局公用className樣式
+@import "./theme";
+
+// mixin
+.g-border-1px(@color: @color-CL){
+  position: relative;
+  &:after{
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid @color;
+    content: ' ';
+  }
+}
+
+.g-bg-repeat-y(@bg) {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-image: url(@bg);
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  background-color: white;
+}
+
+.g-border-none(){
+  &:after{
+    display: none;
+  }
+}
+
+// base
+.g-clearfix{
+  display: inline-block;
+  &:after{
+    display: block;
+    content: ".";
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-device-pixel-ratio: 1.5){
+  .g-border-1px{
+    &::after{
+      -webkit-transform: scaleY(0.7);
+      transform: scaleY(0.7);
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-device-pixel-ratio: 2){
+  .g-border-1px{
+    &::after{
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3),
+(min-device-pixel-ratio: 3){
+  .g-border-1px{
+    &::after{
+      -webkit-transform: scaleY(0.3);
+      transform: scaleY(0.3);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+/**
+  該less文件定義了需要覆蓋VUX樣式庫的樣式集合，
+  如需使用請 import 進來
+ */
+@import "./theme";
+
+.weui-cells {
+  border-bottom: 1px solid @color-CL;
+  .weui-cell {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: @font-S2;
+  }
+  &:before {
+    display: none;
+  }
+  &:after {
+    width: 0;
+    transition: width .4s;
+  }
+  &:hover {
+    &:after {
+      width: 100%;
+      background-color: @color-CR;
+      margin: 0 auto;
+      height: 4px;
+      bottom: -1px;
+    }
+  }
+}
+
+.vux-tab{
+  box-sizing: content-box;
+}

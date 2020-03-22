@@ -1,0 +1,13 @@
+<svg id="home_tab_ic_need_normal" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #919293;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="ic">
+    <path id="椭圆_2_拷贝_4" data-name="椭圆 2 拷贝 4" class="cls-1" d="M386,2344a9,9,0,1,1-9,9A9,9,0,0,1,386,2344Zm-22,0a9,9,0,1,1-9,9A9,9,0,0,1,364,2344Zm11-21a9,9,0,1,1-9,9A9,9,0,0,1,375,2323Zm0,3a6,6,0,1,1-6,6A6,6,0,0,1,375,2326Zm11,21a6,6,0,1,1-6,6A6,6,0,0,1,386,2347Zm-22,0a6,6,0,1,1-6,6A6,6,0,0,1,364,2347Z" transform="translate(-353 -2320.5)"/>
+  </g>
+</svg>
