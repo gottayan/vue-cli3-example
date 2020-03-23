@@ -9,7 +9,17 @@ import Vuex from 'vuex'
 import { sync } from 'vuex-router-sync'
 import axios from './tools/axios'
 import Icon from 'vue-svg-icon/Icon.vue'
-import { LoadingPlugin, ToastPlugin, ConfirmPlugin, XInput, Group, Toast, Confirm, AlertPlugin } from 'vux'
+// import { LoadingPlugin, ToastPlugin, ConfirmPlugin, XInput, Group, Toast, Confirm, AlertPlugin } from 'vux'
+
+import LoadingPlugin from 'vux/src/plugins/loading'
+import ToastPlugin from 'vux/src/plugins/toast'
+import ConfirmPlugin from 'vux/src/plugins/confirm'
+import XInput from 'vux/src/components/x-input'
+import Group from 'vux/src/components/group'
+import Toast from 'vux/src/components/toast'
+import Confirm from 'vux/src/components/confirm'
+import AlertPlugin from 'vux/src/plugins/alert'
+
 import { shipMapping, roleList, stepOptions, thingsStatusList,
   storyType, valuationList, needDonateDealStatusMap } from './tools/constant'
 import { getSmartDate } from './tools/datetime'
