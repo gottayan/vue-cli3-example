@@ -3,7 +3,7 @@ const analytisLog = (bundle) => {
     'background-color: #666 color: #bada55 padding: 3px 10px',
     bundle)
   // window.ga('send', bundle)
-  window.gtag('event', bundle.eventAction, {
+  window.gtag && window.gtag('event', bundle.eventAction, {
     event_category: bundle.eventCategory,
     event_label: bundle.eventLabel
   })

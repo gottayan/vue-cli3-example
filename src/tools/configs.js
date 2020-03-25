@@ -11,7 +11,7 @@ if (href.indexOf('give543.com') !== -1) {
   }
 } else {
   module.exports = {
-    server: 'https://give543-api.shengxintech.com',
+    server: '//api.give543.com',
     reqlApi: '/api',
     facebookAppID: '281409512031484',
     googleClientID: '102978352106-mipjlpsqq3rvd4068c8ncpbfc60kj0tg.apps.googleusercontent.com',

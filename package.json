@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "analyz": "vue-cli-service build --mode analyz",
+    "inspect": "vue-cli-service inspect --mode production",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e"
@@ -55,6 +55,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "speed-measure-webpack-plugin": "^1.3.3",
     "style-resources-loader": "^1.3.3",
     "vue-cli-plugin-style-resources-loader": "^0.1.4",
     "vue-loader": "^14.0.0",

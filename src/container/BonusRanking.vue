@@ -9,41 +9,41 @@
       <div
         :style="{justifyContent: bonusRank.length === 1 ? 'center' : 'space-around'}"
         class="top-wrapper">
-        <template v-if="index <= 2">
-          <div
-            :key="index"
-            @click="toUser(rank.user_id)"
-            :style="{order: index === 0 ? 1 : index === 1 ? 0 : 3}"
-            :class="index === 0 ? 'top-rank-item first' : 'top-rank-item'"
-            v-for="(rank, index) in bonusRank">
-            <span
-              class="avatar">
-            <img
-              width="55"
-              height="55"
-              :src="smartImagePath(rank.user.pics) || defaultAvatar"
-              alt="icon">
-            </span>
-            <span
-              class="name">
-              {{ rank.user.nickname || '無暱稱'}}
-            </span>
-            <span class="bonus">{{ rank.bonus }} 點</span>
-            <img
-              class="rank-icon"
-              width="auto"
-              :src="index === 0 ? rankFirst : index === 1 ? rankSecond : rankThird"
-              alt="icon">
-          </div>
-        </template>
+        <div
+          v-if="index <= 2"
+          :key="index"
+          @click="toUser(rank.user_id)"
+          :style="{order: index === 0 ? 1 : index === 1 ? 0 : 3}"
+          :class="index === 0 ? 'top-rank-item first' : 'top-rank-item'"
+          v-for="(rank, index) in bonusRank">
+          <span
+            class="avatar">
+          <img
+            width="55"
+            height="55"
+            :src="smartImagePath(rank.user.pics) || defaultAvatar"
+            alt="icon">
+          </span>
+          <span
+            class="name">
+            {{ rank.user.nickname || '無暱稱'}}
+          </span>
+          <span class="bonus">{{ rank.bonus }} 點</span>
+          <img
+            class="rank-icon"
+            width="auto"
+            :src="index === 0 ? rankFirst : index === 1 ? rankSecond : rankThird"
+            alt="icon">
+        </div>
         <div
           :style="{visibility: 'hidden', order: 3}"
           v-if="bonusRank.length === 2"
           class="top-rank-item">
         </div>
       </div>
-      <div class="other-wrapper" v-if="index > 2">
+      <div class="other-wrapper">
         <div
+          v-if="index > 2"
           :key="index"
           class="rank-item"
           @click="toUser(rank.user_id)"
