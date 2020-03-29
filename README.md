@@ -1,4 +1,4 @@
-# webpack-demo
+# vue-cli3-example
 
 ## Project setup
 ```
