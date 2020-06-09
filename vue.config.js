@@ -2,7 +2,7 @@
 const path = require('path')
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const DllReferencePlugin = require('webpack').DllReferencePlugin
+const { ProgressPlugin, DllReferencePlugin } = require('webpack')
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 
 // const threadLoader = require('thread-loader')
@@ -32,6 +32,27 @@ module.exports = {
     .plugin('speed-measure-webpack-plugin')
     .use(SpeedMeasurePlugin)
     .end()
+
+    // config
+    // .plugin('progress')
+    // .use(ProgressPlugin)
+    // .tap(options => {
+    //   options = [{
+    //     // handler (percentage, msg) {
+    //     //   console.info((percentage.toFixed(2) * 100) + '%', msg)
+    //     // },
+    //     profile: true,
+    //   }]
+    //   return options
+    // })
+    // .end()
+
+    // config.module.rule('images')
+    // .use('image-webpack-loader')
+    // .loader('image-webpack-loader')
+    // .tap(options => {
+    //   return {}
+    // })
 
     // config.module.rule('eslint')
     //   .use('thread-loader')
@@ -71,6 +92,11 @@ module.exports = {
       }
       return options
     })
+
+    // 移除 prefetch 插件
+    config.plugins.delete('prefetch')
+    // 移除 preload 插件
+    config.plugins.delete('preload')
 
     config
     .plugin('asset')

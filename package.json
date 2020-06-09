@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "build-dll": "webpack --config build/webpack.dll.config.js --mode production",
+    "build": "vue-cli-service build --progress --profile",
+    "build-dll": "webpack --config build/webpack.dll.config.js --mode production --progress --profile",
     "inspect": "vue-cli-service inspect --mode production",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
